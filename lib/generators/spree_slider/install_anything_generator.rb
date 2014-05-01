@@ -6,12 +6,12 @@ module SpreeSlider
       copy_file "anything_slider.html.erb", "app/views/spree/shared/_slider.html.erb"      
       
       #add javascripts
-      append_file "vendor/assets/javascripts/spree/frontend/all.js", "//= require js/jquery.anythingslider\n"
-      append_file "vendor/assets/javascripts/spree/frontend/all.js", "//= require js/jquery.anythingslider.fx\n"
-      append_file "vendor/assets/javascripts/spree/frontend/all.js", "//= require js/jquery.anythingslider.video\n"
+      append_file "vendor/assets/javascripts/spree/store/all.js", "//= require js/jquery.anythingslider\n"
+      append_file "vendor/assets/javascripts/spree/store/all.js", "//= require js/jquery.anythingslider.fx\n"
+      append_file "vendor/assets/javascripts/spree/store/all.js", "//= require js/jquery.anythingslider.video\n"
 
       #add stylesheets
-      inject_into_file "vendor/assets/stylesheets/spree/frontend/all.css", " *= require css/anythingslider\n", :before => /\*\//, :verbose => true
+      inject_into_file "vendor/assets/stylesheets/spree/store/all.css", " *= require css/anythingslider\n", :before => /\*\//, :verbose => true
 
       #copy migrations
       run 'bundle exec rake railties:install:migrations FROM=spree_slider'
