@@ -6,13 +6,13 @@ module SpreeSlider
       copy_file "nivo_slider.html.erb", "app/views/spree/shared/_slider.html.erb"      
       
       #add javascripts
-      append_file "app/assets/javascripts/spree/store/all.js", "//= require jquery.nivo.slider.pack.js\n"
+      append_file "app/assets/javascripts/store/all.js", "//= require jquery.nivo.slider.pack.js\n"
 
       #add stylesheets
-      inject_into_file "app/assets/stylesheets/spree/store/all.css", " *= require themes/default/default\n", :before => /\*\//, :verbose => true
-      inject_into_file "app/assets/stylesheets/spree/store/all.css", " *= require themes/pascal/pascal\n", :before => /\*\//, :verbose => true
-      inject_into_file "app/assets/stylesheets/spree/store/all.css", " *= require themes/orman/orman\n", :before => /\*\//, :verbose => true
-      inject_into_file "app/assets/stylesheets/spree/store/all.css", " *= require nivo-slider\n", :before => /\*\//, :verbose => true
+      inject_into_file "app/assets/stylesheets/store/all.css", " *= require themes/default/default\n", :before => /\*\//, :verbose => true
+      inject_into_file "app/assets/stylesheets/store/all.css", " *= require themes/pascal/pascal\n", :before => /\*\//, :verbose => true
+      inject_into_file "app/assets/stylesheets/store/all.css", " *= require themes/orman/orman\n", :before => /\*\//, :verbose => true
+      inject_into_file "app/assets/stylesheets/store/all.css", " *= require nivo-slider\n", :before => /\*\//, :verbose => true
 
       #copy migrations
       run 'bundle exec rake railties:install:migrations FROM=spree_slider' 
